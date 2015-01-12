@@ -26,7 +26,7 @@ class DatabaseImporter(object):
 	def mongo(self):
 		port = args.port or '27017'
 		postfix = ' {}'.format(self.args.additional)
-		command = 'mongorestore --host {host} --port {port}'
+		command = 'mongorestore --drop --host {host} --port {port}'
 		command += postfix
 		command += ' {input}'
 		self(command.format(
